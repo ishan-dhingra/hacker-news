@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="vm"
+            type="com.anythingintellect.hackernews.viewmodel.ItemViewModel"/>
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:visibility="@{vm.showError ? View.GONE : View.VISIBLE}"
+            android:onClick="@{() -> vm.openKids()}"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="@{String.valueOf(vm.item.score)}"
+                android:id="@+id/txtScore"
+                android:layout_width="70dp"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:visibility="@{vm.showProgress ? View.GONE : View.VISIBLE}"
+                android:textSize="28sp"
+                android:layout_alignParentTop="true"
+                android:layout_height="70dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/txtTitle"
+                android:visibility="@{vm.showProgress ? View.GONE : View.VISIBLE}"
+                android:maxLines="2"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:ellipsize="end"
+                android:layout_toRightOf="@id/txtScore"
+                android:layout_alignParentTop="true"
+                android:text="@{vm.item.title}"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:visibility="@{vm.showProgress ? View.GONE : View.VISIBLE}"
+                android:layout_toRightOf="@+id/txtScore"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_alignParentBottom="true"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="0dp"
+                    android:drawableLeft="@drawable/ic_user"
+                    android:text="@{vm.item.by}"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:drawablePadding="5dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:drawableLeft="@drawable/ic_time"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:drawablePadding="5dp"
+                    bind:timeAgo="@{vm.item.time}"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/ic_comment"
+                    android:text="@{String.valueOf(vm.item.kids.size())}"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:layout_gravity="center"
+                android:visibility="@{vm.showProgress ? View.VISIBLE : View.GONE}"
+                style="?android:attr/android:progressBarStyleSmall"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:onClick="@{ () -> vm.loadItem()}"
+            android:visibility="@{vm.showError ? View.VISIBLE : View.GONE}"
+            android:drawableTop="@drawable/ic_error_item"
+            android:text="@string/txt_error_item"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+</layout>
