@@ -25,6 +25,9 @@ public class DefaultNavigator implements Navigator {
     }
 
     private long[] toArray(List<Long> commentList) {
+        if (commentList == null) {
+            return null;
+        }
         long[] comments = new long[commentList.size()];
         int count = 0;
         for (long id : commentList) {
