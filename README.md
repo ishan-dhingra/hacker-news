@@ -6,19 +6,27 @@ Hacker New App for Android using MVVM, Android DataBinding, Dagger2, RxJava2 and
 <table>
 <tr>
 <td>
-<img src="https://raw.githubusercontent.com/ishan-dhingra/hacker-news/master/screenshots/Hacker-News-Home.png" width="400" height="711"/>
+<img src="https://raw.githubusercontent.com/ishan-dhingra/hacker-news/master/screenshots/Hacker-News-Home.png" width="250" height="445"
 </td>
 <td>
-<img src="https://raw.githubusercontent.com/ishan-dhingra/hacker-news/master/screenshots/Hacker-News-Comments.png" width="400" height="711"/>
+<img src="https://raw.githubusercontent.com/ishan-dhingra/hacker-news/master/screenshots/Hacker-News-Comments.png" width="250" height="445"/>
 </td>
+<td>
+<img src="https://raw.githubusercontent.com/ishan-dhingra/hacker-news/master/screenshots/Hacker-News-Retry.png" width="250" height="445"/>
+</td>
+</tr>
+<tr>
+<td>
+
+<img src="https://raw.githubusercontent.com/ishan-dhingra/hacker-news/master/screenshots/Hacker-News-Went-Wrong.png" width="250" height="445"/></td>
+<td><img src="https://raw.githubusercontent.com/ishan-dhingra/hacker-news/master/screenshots/Hacker-News-No-Comments.png" width="250" height="445"/></td>
+<td></td>
 </tr>
 </table>
 
-<img src="https://raw.githubusercontent.com/ishan-dhingra/hacker-news/master/screenshots/Hacker-News-Retry.png" width="500" height="889"/>
 
-<img src="https://raw.githubusercontent.com/ishan-dhingra/hacker-news/master/screenshots/Hacker-News-Went-Wrong.png" width="500" height="889"/>
 
-<img src="https://raw.githubusercontent.com/ishan-dhingra/hacker-news/master/screenshots/Hacker-News-No-Comments.png" width="500" height="889"/>
+
 
 
 
