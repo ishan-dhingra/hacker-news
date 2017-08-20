@@ -1,9 +1,8 @@
 # Hacker News
 
 Hacker New App for Android using MVVM, Android DataBinding, Dagger2, RxJava2 and Retrofit. Code base is written keeping SOLID in mind, along with testing code.
-<br/>
+
 Feel the Material: <a href="https://github.com/ishan-dhingra/hacker-news/raw/master/hacker-news.apk">Download APK</a>
-<br/>
 
 <table>
 <tr>
