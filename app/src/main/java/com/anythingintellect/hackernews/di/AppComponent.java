@@ -9,6 +9,6 @@ import dagger.Component;
 @Singleton
 public interface AppComponent {
 
-    FragmentComponent plusFragmentComponent(BaseFragmentModule fragmentModule);
+    ContextComponent plusContextComponent(ContextModule fragmentModule);
 
 }

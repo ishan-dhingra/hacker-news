@@ -17,7 +17,7 @@ import com.anythingintellect.hackernews.R;
 import com.anythingintellect.hackernews.adapter.ItemListAdapter;
 import com.anythingintellect.hackernews.databinding.FragmentCommentListBinding;
 import com.anythingintellect.hackernews.di.AppComponent;
-import com.anythingintellect.hackernews.di.BaseFragmentModule;
+import com.anythingintellect.hackernews.di.ContextModule;
 import com.anythingintellect.hackernews.repo.ItemRepository;
 import com.anythingintellect.hackernews.viewmodel.CommentListViewModel;
 
@@ -52,7 +52,7 @@ public class CommentListFragment extends Fragment {
 
     private void resolveDependencies() {
         AppComponent appComponent = ((HackerNewsApp)getActivity().getApplication()).getAppComponent();
-        appComponent.plusFragmentComponent(new BaseFragmentModule(getContext())).inject(this);
+        appComponent.plusContextComponent(new ContextModule(getContext())).inject(this);
     }
 
     @Override

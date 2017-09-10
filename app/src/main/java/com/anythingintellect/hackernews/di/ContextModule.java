@@ -11,11 +11,11 @@ import dagger.Provides;
 
 @Module
 @PerFragment
-public class BaseFragmentModule {
+public class ContextModule {
 
     private final Context context;
 
-    public BaseFragmentModule(Context context) {
+    public ContextModule(Context context) {
         this.context = context;
     }
 
