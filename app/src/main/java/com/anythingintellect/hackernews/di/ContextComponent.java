@@ -7,7 +7,7 @@ import dagger.Subcomponent;
 
 
 @Subcomponent(modules = ContextModule.class)
-@PerFragment
+@PerContext
 public interface ContextComponent {
 
     void inject(MainActivity mainActivity);

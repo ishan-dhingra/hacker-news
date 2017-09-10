@@ -10,7 +10,7 @@ import dagger.Provides;
 
 
 @Module
-@PerFragment
+@PerContext
 public class ContextModule {
 
     private final Context context;
@@ -20,7 +20,7 @@ public class ContextModule {
     }
 
     @Provides
-    @PerFragment
+    @PerContext
     Navigator providesNavigator() {
         return new DefaultNavigator(context);
     }
