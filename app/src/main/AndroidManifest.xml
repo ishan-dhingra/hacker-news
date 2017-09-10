@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".view.MainActivity"
+              android:configChanges="orientation|screenSize"
               android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.CommentActivity"
+            android:configChanges="orientation|screenSize"
             android:parentActivityName=".view.MainActivity"
             tools:ignore="UnusedAttribute">
             <meta-data android:name="android.support.PARENT_ACTIVITY"

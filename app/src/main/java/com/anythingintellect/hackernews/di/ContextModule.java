@@ -10,17 +10,17 @@ import dagger.Provides;
 
 
 @Module
-@PerFragment
-public class BaseFragmentModule {
+@PerContext
+public class ContextModule {
 
     private final Context context;
 
-    public BaseFragmentModule(Context context) {
+    public ContextModule(Context context) {
         this.context = context;
     }
 
     @Provides
-    @PerFragment
+    @PerContext
     Navigator providesNavigator() {
         return new DefaultNavigator(context);
     }
