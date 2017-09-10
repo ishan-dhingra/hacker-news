@@ -29,14 +29,6 @@ import javax.inject.Inject;
 public class CommentListFragment extends Fragment {
 
 
-    @Inject
-    CommentListViewModel viewModel;
-    @Inject
-    ItemRepository repository;
-
-    private ItemListAdapter adapter;
-
-
     public CommentListFragment() {
         setRetainInstance(true);
     }
@@ -44,37 +36,22 @@ public class CommentListFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        resolveDependencies();
-        adapter = new ItemListAdapter(viewModel.getComments(), repository, R.layout.item_comment);
-        long[] commentIds = getArguments().getLongArray(CommentActivity.KEY_COMMENT_IDS);
-        viewModel.loadComments(commentIds);
+
     }
 
-    private void resolveDependencies() {
-        AppComponent appComponent = ((HackerNewsApp)getActivity().getApplication()).getAppComponent();
-        appComponent.plusContextComponent(new ContextModule(getContext())).inject(this);
-    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        FragmentCommentListBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_comment_list, container, false);
-        binding.setVm(viewModel);
-        return binding.getRoot();
+        return null;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        RecyclerView rvList = (RecyclerView) view.findViewById(R.id.rvList);
-        setupRv(rvList);
+
     }
 
-    private void setupRv(RecyclerView rvList) {
-        rvList.setAdapter(adapter);
-        rvList.setLayoutManager(new LinearLayoutManager(getContext()));
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL);
-        rvList.addItemDecoration(dividerItemDecoration);
-    }
 
 }
