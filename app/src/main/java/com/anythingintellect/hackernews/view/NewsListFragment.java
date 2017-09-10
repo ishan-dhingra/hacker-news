@@ -30,12 +30,7 @@ import javax.inject.Inject;
  */
 public class NewsListFragment extends Fragment {
 
-    @Inject
-    ItemRepository repository;
-    @Inject
-    NewsListViewModel viewModel;
 
-    private ItemListAdapter adapter;
 
     public NewsListFragment() {
         setRetainInstance(true);
@@ -44,47 +39,19 @@ public class NewsListFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        resolveDependencies();
-        adapter = new ItemListAdapter(viewModel.getTopStories(), repository, R.layout.item_news);
-        viewModel.loadNews(false);
-    }
 
-    private void resolveDependencies() {
-        AppComponent appComponent = ((HackerNewsApp)getActivity().getApplication()).getAppComponent();
-        appComponent.plusFragmentComponent(new BaseFragmentModule(getContext())).inject(this);
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        FragmentNewsListBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_news_list, container, false);
-        binding.setVm(viewModel);
-        return binding.getRoot();
+        return null;
+
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        RecyclerView rvList = (RecyclerView) view.findViewById(R.id.rvList);
-        setupRv(rvList);
-        SwipeRefreshLayout refreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeLayout);
-        setupSwipeLayout(refreshLayout);
-    }
 
-    private void setupSwipeLayout(SwipeRefreshLayout refreshLayout) {
-        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                viewModel.loadNews(true);
-            }
-        });
-    }
-
-    private void setupRv(RecyclerView rvList) {
-        rvList.setAdapter(adapter);
-        rvList.setLayoutManager(new LinearLayoutManager(getContext()));
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL);
-        rvList.addItemDecoration(dividerItemDecoration);
     }
 
 }

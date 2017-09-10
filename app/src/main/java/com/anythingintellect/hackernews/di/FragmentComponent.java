@@ -1,6 +1,7 @@
 package com.anythingintellect.hackernews.di;
 
 import com.anythingintellect.hackernews.view.CommentListFragment;
+import com.anythingintellect.hackernews.view.MainActivity;
 import com.anythingintellect.hackernews.view.NewsListFragment;
 
 import dagger.Subcomponent;
@@ -10,7 +11,7 @@ import dagger.Subcomponent;
 @PerFragment
 public interface FragmentComponent {
 
-    void inject(NewsListFragment newsListFragment);
+    void inject(MainActivity mainActivity);
     void inject(CommentListFragment commentListFragment);
 
 }
