@@ -1,7 +1,6 @@
 package com.anythingintellect.hackernews.di;
 
 import com.anythingintellect.hackernews.view.CommentActivity;
-import com.anythingintellect.hackernews.view.CommentListFragment;
 import com.anythingintellect.hackernews.view.MainActivity;
 
 import dagger.Subcomponent;

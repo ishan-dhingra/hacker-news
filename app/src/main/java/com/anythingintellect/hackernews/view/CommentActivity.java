@@ -10,7 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import com.anythingintellect.hackernews.HackerNewsApp;
 import com.anythingintellect.hackernews.R;
 import com.anythingintellect.hackernews.adapter.ItemListAdapter;
-import com.anythingintellect.hackernews.databinding.FragmentCommentListBinding;
+import com.anythingintellect.hackernews.databinding.ActivityCommentBinding;
 import com.anythingintellect.hackernews.di.AppComponent;
 import com.anythingintellect.hackernews.di.ContextModule;
 import com.anythingintellect.hackernews.repo.ItemRepository;
@@ -34,7 +34,7 @@ public class CommentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FragmentCommentListBinding binding = DataBindingUtil.setContentView(this, R.layout.fragment_comment_list);
+        ActivityCommentBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_comment);
         binding.setVm(viewModel);
         String title = getIntent().getStringExtra(KEY_TITLE);
         setTitle(title);
