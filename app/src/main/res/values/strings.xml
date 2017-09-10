@@ -2,9 +2,6 @@
     <string name="app_name">Hacker News</string>
     <string name="btn_retry">Retry</string>
     <string name="txt_error">Oh boy! something went wrong!</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="txt_no_comment">What? No one has commented yet!</string>
     <string name="txt_error_item">Oh shot! it\'s stuck, tap to retry!</string>
 </resources>

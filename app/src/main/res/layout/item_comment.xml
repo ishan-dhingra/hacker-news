@@ -21,6 +21,7 @@
 
             <ImageView
                 android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:visibility="@{vm.showProgress ? View.GONE : View.VISIBLE}"
                 android:src="@drawable/ic_profile_pic"
@@ -31,6 +32,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_toRightOf="@+id/imgProfilePic"
+                android:layout_toEndOf="@+id/imgProfilePic"
+                android:layout_alignLeft="@+id/txtTime"
+                android:layout_alignStart="@+id/txtTime"
                 android:id="@+id/txtName"
                 android:textColor="@android:color/black"
                 android:textSize="14sp"
@@ -42,16 +46,19 @@
                 android:layout_width="wrap_content"
                 android:id="@+id/txtTime"
                 bind:timeAgo="@{vm.item.time}"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
                 android:drawablePadding="3dp"
                 android:visibility="@{vm.showProgress ? View.GONE : View.VISIBLE}"
                 android:layout_marginTop="2dp"
                 android:drawableLeft="@drawable/ic_time"
+                android:drawableStart="@drawable/ic_time"
                 android:layout_height="wrap_content" />
             <TextView
                 android:layout_toRightOf="@+id/imgProfilePic"
+                android:layout_toEndOf="@+id/imgProfilePic"
                 android:layout_width="match_parent"
                 android:visibility="@{vm.showProgress ? View.GONE : View.VISIBLE}"
                 android:layout_below="@+id/txtName"
@@ -59,12 +66,6 @@
                 bind:html="@{vm.item.text}"
                 android:layout_height="wrap_content" />
 
-            <ProgressBar
-                android:visibility="@{vm.showProgress ? View.VISIBLE : View.GONE}"
-                style="?android:attr/android:progressBarStyleSmall"
-                android:layout_centerInParent="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
         </RelativeLayout>
 
         <TextView
@@ -75,6 +76,13 @@
             android:visibility="@{vm.showError ? View.VISIBLE : View.GONE}"
             android:drawableTop="@drawable/ic_error_item"
             android:text="@string/txt_error_item"
+            android:layout_height="wrap_content" />
+
+        <ProgressBar
+            android:visibility="@{vm.showProgress ? View.VISIBLE : View.GONE}"
+            style="?android:attr/android:progressBarStyleSmall"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </FrameLayout>
 </layout>
